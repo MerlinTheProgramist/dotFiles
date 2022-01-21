@@ -1,0 +1,52 @@
+
+theme = "bad-wolf"
+icons = "material-nf"
+
+[[block]]
+block = "cpu"
+interval = 1
+format="{utilization} {frequency}"
+[block.theme_overrides]
+idle_bg="#FF4C29"
+
+[[block]]
+block = "nvidia_gpu"
+label = "RTX 2070"
+show_memory = false
+#show_clocks = true
+interval = 1
+[block.theme_overrides]
+idle_bg="#334756"
+
+
+[[block]]
+block = "memory"
+format_mem = "{mem_used} /{mem_total}({mem_used_percents})"
+format_swap = "{swap_used} /{swap_total}({swap_used_percents})"
+display_type = "memory"
+icons = true
+clickable = true
+interval = 5
+warning_mem = 80
+warning_swap = 80
+critical_mem = 95
+critical_swap = 95
+[block.theme_overrides]
+idle_bg="#2C394B"
+
+
+[[block]]
+block = "sound"
+step_width = 1
+#on_click = "volumeicon"
+[block.theme_overrides]
+idle_bg="#082032"
+
+
+[[block]]
+block = "time"
+interval = 1
+format = "%a %d/%m %R"
+[block.theme_overrides]
+#idle_bg="#222222"
+idle_fg="#FC997C"
