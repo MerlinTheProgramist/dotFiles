@@ -9,6 +9,6 @@
 ## Wallpapers
 Wallpapers for my 2 monitors(vertical and horizontal) setup are choosen randomly from:
 - ```/usr/share/wallpapers/horizontal/```
-- ```/usr/share/wallpapers/vertical/`
+- ```/usr/share/wallpapers/vertical/```
 
 
