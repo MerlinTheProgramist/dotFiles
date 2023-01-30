@@ -1,0 +1,30 @@
+[[language]]
+name = "arduino"
+scope = "source.arduino"
+file-types = ["ini"]
+roots = []
+comment-token = "//"
+language-server = {command = "arduino-language-server", args=["-clangd /usr/bin/clangd", "-cli /usr/bin/arduino-cli", "-cli-config $HOME/.arduino15/arduino-cli.yaml"], language-id = "arduino"}
+
+[[language]]
+name="cpp"
+[language.auto-pairs]
+# '<' = '>' 
+
+[[language]]
+name = "rust"
+scope = "source.rust"
+injection-regex = "rust"
+file-types = ["rs"]
+roots = ["Cargo.toml", "Cargo.lock","main.rs"]
+auto-format = true
+comment-token = "//"
+language-server = { command = "rust-analyzer" }
+indent = { tab-width = 4, unit = "    " }
+
+[[language]]
+name="asm"
+comment-token = ";"
+file-types = ["asm","fasm","nasm"]
+scope = "source.asm"
+roots = []

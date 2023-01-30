@@ -1,0 +1,7 @@
+#theme = "monokai_pro_octagon"
+theme = "dracula_at_night"
+# [editor]
+# line-number = "relative"
+
+[keys.insert]
+"C-s" = ":w"
