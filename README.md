@@ -1,4 +1,6 @@
 # My dotFiles
+www.chezmoi.io
+
 - i3wm
 - i3status
 - bashrc
