@@ -1,19 +1,27 @@
-
+[theme]
 theme = "bad-wolf"
+[icons]
 icons = "material-nf"
+
+
+# [[block]]
+# block = "pomodoro"
+# notify_cmd = "notify-send '{msg}'"
+# blocking_cmd = false
+# [block.theme_overrides]
+# idle_bg="#121212"
 
 [[block]]
 block = "cpu"
 interval = 1
-format="{utilization} {frequency}"
+format="$icon {$utilization} {$frequency} "
 [block.theme_overrides]
 idle_bg="#FF4C29"
 
 [[block]]
 block = "nvidia_gpu"
-label = "RTX 2070"
-show_memory = false
 #show_clocks = true
+format = " RTX 2070 $utilization $memory $temperature "
 interval = 1
 [block.theme_overrides]
 idle_bg="#334756"
@@ -21,14 +29,9 @@ idle_bg="#334756"
 
 [[block]]
 block = "memory"
-format_mem = "{mem_used} /{mem_total}({mem_used_percents})"
-format_swap = "{swap_used} /{swap_total}({swap_used_percents})"
-display_type = "memory"
-icons = true
-clickable = true
+format = "{$mem_used}/{$mem_total} ({$mem_used_percents})"
 interval = 5
 warning_mem = 80
-warning_swap = 80
 critical_mem = 95
 critical_swap = 95
 [block.theme_overrides]
@@ -46,7 +49,11 @@ idle_bg="#082032"
 [[block]]
 block = "time"
 interval = 1
-format = "%a %d/%m %R"
+# format = "%a %d/%m %R"
+[block.format]
+full = " $icon $timestamp.datetime(f:'%Y-%m-%d %R', l:fr_BE) "
+short = " $icon $timestamp.datetime(f:%R) "
 [block.theme_overrides]
 #idle_bg="#222222"
 idle_fg="#FC997C"
+

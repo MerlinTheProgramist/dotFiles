@@ -24,7 +24,10 @@ indent = { tab-width = 4, unit = "    " }
 
 [[language]]
 name="asm"
-comment-token = ";"
-file-types = ["asm","fasm","nasm"]
 scope = "source.asm"
+injection-regex = "asm"
 roots = []
+file-types = ["asm","nasm","s","S"]
+language-server = { command = "asm-lsp"}
+comment-token = ";"
+indent = {tab-width = 2, unit="  "}

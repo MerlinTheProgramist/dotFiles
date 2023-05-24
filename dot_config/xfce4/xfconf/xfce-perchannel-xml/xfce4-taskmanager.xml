@@ -11,6 +11,7 @@
   <property name="columns" type="empty">
     <property name="sort-type" type="uint" value="1"/>
     <property name="sort-id" type="uint" value="0"/>
+    <property name="column-priority" type="bool" value="false"/>
   </property>
   <property name="window-width" type="int" value="1288"/>
   <property name="window-height" type="int" value="545"/>

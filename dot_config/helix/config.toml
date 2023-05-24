@@ -1,7 +1,20 @@
-#theme = "monokai_pro_octagon"
+# theme = "monokai_pro_octagon"
 theme = "dracula_at_night"
+# theme = "dark_high_contrast"
 # [editor]
 # line-number = "relative"
 
+editor.color-modes = true
+
 [keys.insert]
 "C-s" = ":w"
+
+# [editor.statusline]
+# left = ["mode", "spinner"]
+# center = ["file-name"]
+# right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+# separator = "│"
+# mode.normal = "NORMAL"
+# mode.insert = "INSERT"
+# mode.select = "SELECT"
+

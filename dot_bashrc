@@ -14,8 +14,7 @@
 
 export HISTCONTROL=ignoreboth:erasedups
 
-# Make nano the default editor
-
+# Make helix the default editor
 export EDITOR='helix'
 export VISUAL='helix'
 
@@ -44,7 +43,7 @@ alias l.="ls -A | egrep '^\.'"
 
 #userful shorts
 alias c='clear'
-alias t='xfce4-terminal'
+alias t='alacritty &'
 
 
 #fix obvious typo's
@@ -60,6 +59,7 @@ alias upal="paru -Syu --noconfirm"
 # more intuitive shortcuts
 alias dir="pwd"
 alias rmdir="rm -fr"
+alias rm="rm -i"
 
 # cd shorts
 alias cdb='cd ..'
@@ -281,7 +281,7 @@ compile_raylib()
   # if [ "$#" -ne "1"]; then 
   #     echo "Podaj nazwę binarki, PLS?"
   # else
-  c++ -w -std=c++11 -I. -L. -lraylib -lglfw -lGL -lopenal -lm -pthread -ldl *.cpp -o "$1" -Wall
+  c++ -w -std=c++17 -I. -L. -lraylib -lglfw -lGL -lopenal -lm -pthread -ldl *.cpp -o "$1" -Wall
   # fi
 }
 
@@ -293,6 +293,11 @@ compile_cpp()
 compile_cpp_d()
 {
   c++ -Wall -std=c++17 -ldl *.cpp -d -o $1 
+}
+
+compile_asm64_d()
+{
+  yasm -felf64 -m amd64 -g dwarf2 $1
 }
 
 # # ex = EXtractor for all kinds of archives
@@ -345,9 +350,10 @@ alias awa="arcolinux-welcome-app"
 #alias python="python3.7"
 alias python3="python3.7"
 alias python-shell="ipython"
-#remove
+# git
 alias rmgitcache="rm -r ~/.cache/git"
 alias gitignore="git rm -r --cached . ; git add -A ; git commit -am 'ignore' ; git"
+alias git_re-add="git update-index --again"
 
 #moving your personal files and folders from /personal to ~
 alias personal='cp -Rf /personal/* ~'
@@ -358,6 +364,8 @@ alias anaconda='source /opt/anaconda/bin/deactivate root'
 # Rust
 source "$HOME/.cargo/env"
 
+# Discord with fixed lagging issue (due to some notificatio driver)
+alias discord="LIBVA_DRIVER_NAME=radeonsi discord --ignore-gpu-blocklist --disable-features=UseOzonePlatform --enable-features=VaapiVideoDecoder --use-gl=desktop --enable-gpu-rasterization --enable-zero-copy" 
 
 #create a file called .bashrc-personal and put all your personal aliases
 #in there. They will not be overwritten by skel.
@@ -384,7 +392,11 @@ parse_git_branch() {
  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
-PS1='\[`[ $? = 0 ] && X=2 || X=1; tput setaf $X`\]\h@\u\[`tput sgr0`\]:\w\[\033[01;31m\]$(parse_git_branch)\[\033[00m\]\n\$ '
+# PS1='\[\e[0m\]┌\[\e[0m\]\u\[\e[0m\][`[ $? = 0 ] && X=2 || X=1; tput setaf $X`\]\H$(parse_git_branch)\[\033[00m\]\n└─⟴ '
+# PS1='\[\e[0m\]┌[\[\e[0m\]\u[\[\e[0m\]\[`tput setaf 2`\]\H\[\033[00m\]\n└\[\033[38;5;57m\]$(parse_git_branch)\[\033[00m\]→ '
+PS1='\[\e[0m\]┌[\[\e[0m\]\u[\[\e[0m\]\[`tput setaf 2`\]\H\[\033[00m\]\n\
+│\w
+└\[\033[38;5;57m\]$(parse_git_branch)\[\033[00m\]→ '
 
 
 

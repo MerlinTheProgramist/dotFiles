@@ -102,20 +102,6 @@ bindsym $mod+Shift+0 move container to workspace 10; workspace 10
 
 ################# menu's in arcolinux
 
-# start dmenu
-#bindsym $mod+d exec --no-startup-id dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=14'
-
-# start xfce4-appfinder
-#bindsym mod1+F2 exec --no-startup-id xfce4-appfinder --collapsed
-
-# start xfce-appfinder
-#bindsym mod1+F3 exec --no-startup-id xfce4-appfinder
-
-# start xlunch app launcher
-# bindsym mod1+F5 exec --no-startup-id xlunch --config ~/.config/xlunch/default.conf --input ~/.config/xlunch/entries.dsv
-
-# start rofi full
-#bindsym $mod+shift+d exec --no-startup-id "rofi -font 'Noto Sans 13' -theme-str 'window {width: 100%;height: 100%;}' -show drun"
 
 # start rofi small
 bindsym $mod+d exec --no-startup-id "rofi -show drun -font 'Noto Sans 13'"
@@ -141,8 +127,7 @@ mode "$mode_system" {
 }
 
 # ArcoLinux Logout
-bindsym $mod+Shift+e exec --no-startup-id arcolinux-logout
-bindsym $mod+X exec --no-startup-id arcolinux-logout
+bindsym $mod+X exec --no-startup-id archlinux-logout
 
 ################# reload changed configuration
 
@@ -322,6 +307,8 @@ assign [class="Xed|xed|Brackets|Atom|Code|Geany"]                               
 
 # USER APPLICATIONS TO START AT BOOT
 
+# exec_always --no-startup-id i3-gnome-pomodoro start
+
 # Autotiling
 exec_always --no-startup-id autotiling
 
@@ -377,7 +364,18 @@ exec_always --no-startup-id numlockx on
 # feh sets wallpaper
 	exec --no-startup-id feh --bg-center /usr/share/wallpapers/horizontal/$(ls /usr/share/wallpapers/horizontal | shuf -n 1) --bg-center --bg-scale /usr/share/wallpapers/vertical/$(ls /usr/share/wallpapers/vertical | shuf -n 1)
 	# on pressing MENU key
-	bindcode 135 exec "feh --bg-center /usr/share/wallpapers/horizontal/$(ls /usr/share/wallpapers/horizontal | shuf -n 1) --bg-center --bg-scale /usr/share/wallpapers/vertical/$(ls /usr/share/wallpapers/vertical | shuf -n 1)"
+	bindcode 74 exec "feh --bg-center /usr/share/wallpapers/horizontal/$(ls /usr/share/wallpapers/horizontal | shuf -n 1) --bg-center --bg-scale /usr/share/wallpapers/vertical/$(ls /usr/share/wallpapers/vertical | shuf -n 1)"
+	bindcode 75 exec "feh --bg-color black"
+# OpenRGB
+exec --no-startup-id openrgb -p ~/.config/OpenRGB/my_profile.orp
+
+# Terminal fun
+exec --no-startup-id bpytop
+exec --no-startup-id cava 
+# add more ...
+
+
+
 
 ################# system applications
 
@@ -391,83 +389,25 @@ exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd &
 
 # not workspace related
 
-# ArcoLinux Welcome App
-bindsym control+mod1+w exec --no-startup-id arcolinux-welcome-app
+# terminal key
+bindsym $mod+Return exec --no-startup-id alacritty ; focus
 
-# ArcoLinux Tweak Tool
-bindsym control+mod1+e exec --no-startup-id arcolinux-tweak-tool
-
-# conky
-#bindsym $mod+c exec --no-startup-id conky-toggle
-#bindsym control+mod1+Prior exec --no-startup-id conky-rotate -p
-
-# terminal urxvt
-bindsym $mod+Return exec --no-startup-id xfce4-terminal ; focus
-bindsym F12 exec --no-startup-id xfce4-terminal ; focus
-
-# System monitor
-bindsym control+Shift+Escape exec --no-startup-id xfce4-taskmanager;focus
-
-# settings
-bindsym control+mod1+m exec --no-startup-id xfce4-settings-manager
-
-# catfish
-# arcolinux-logout
-bindsym control+mod1+k exec --no-startup-id arcolinux-logout
-bindsym control+mod1+l exec --no-startup-id arcolinux-logout
-
-# rofi theme selector
-bindsym control+mod1+r exec --no-startup-id rofi-theme-selector
-
-# htop
-# arcolinux conflict
-# bindsym $mod+h exec --no-startup-id htop;focus
-
-# pavucontrol
-bindsym control+mod1+u exec --no-startup-id pavucontrol
-
-# start xfce-appfinder
-# arcolinux does not seem to work
-#bindsym control+mod1+a exec --no-startup-id xfce4-appfinder
-
-# pamac-manager
-bindsym control+mod1+p exec --no-startup-id pamac-manager
+# audio controll
+bindsym $mod+u exec --no-startup-id pavucontrol
 
 # xkill
 bindsym --release $mod+Escape exec xkill
 
 # Function Keybinds
 # Browser
-bindsym $mod+b exec --no-startup-id brave;focus
-# qwerty/azerty conflict with w
-bindsym $mod+w exec --no-startup-id exo-open --launch webbrowser;focus
-bindsym control+mod1+f exec --no-startup-id firefox;focus
-bindsym control+mod1+v exec --no-startup-id vivaldi-stable;focus
-bindsym control+mod1+g exec --no-startup-id chromium;focus
+bindsym $mod+b exec --no-startup-id exo-open --launch webbrowser;focus
 
 # Text Editor
-# bindsym $mod+F2 exc --no-startup-id geany;focus
 bindsym $mod+h exec exec xfce4-terminal -e "helix";focus
 
-# Basic Draw Tool
-#bindsym $mod+F3 exec --no-startup-id inkscape;focus
-
-# Advanced Draw Tool
-bindsym $mod+F4 exec --no-startup-id gimp;focus
-
-# document comparison
-bindsym $mod+F5 exec --no-startup-id meld;focus
-bindsym control+mod1+i exec --no-startup-id nitrogen;focus
-
-# video player
-bindsym $mod+m exec xfce4-terminal -e musikcube;focus
-
-# virtual machine
-bindsym $mod+F7 exec --no-startup-id virtualbox;focus
-
 # file management
-for_window [class="Thunar"] focus
-bindsym $mod+a exec --no-startup-id pcmanfm;focus
+for_window [class="pcmanfm"] focus
+bindsym $mod+shift+f exec --no-startup-id pcmanfm;focus
 
 # mail application
 bindsym $mod+F9 exec --no-startup-id evolution;focus

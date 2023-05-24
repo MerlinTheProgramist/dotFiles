@@ -23,6 +23,7 @@
       <value type="string" value="itch"/>
       <value type="string" value="nheko"/>
       <value type="string" value="notify-send"/>
+      <value type="string" value="org.gnome.Pomodoro"/>
       <value type="string" value="org.gnome.Software"/>
       <value type="string" value="org.manjaro.pamac.manager"/>
       <value type="string" value="org.manjaro.pamac.tray"/>
@@ -58,4 +59,5 @@
   <property name="initial-opacity" type="double" value="1"/>
   <property name="primary-monitor" type="uint" value="0"/>
   <property name="theme" type="string" value="Default"/>
+  <property name="log-max-size-enabled" type="bool" value="true"/>
 </channel>
