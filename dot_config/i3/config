@@ -393,7 +393,7 @@ exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd &
 bindsym $mod+Return exec --no-startup-id alacritty ; focus
 
 # audio controll
-bindsym $mod+u exec --no-startup-id pavucontrol
+bindsym $mod+p exec --no-startup-id pavucontrol
 
 # xkill
 bindsym --release $mod+Escape exec xkill
@@ -402,8 +402,9 @@ bindsym --release $mod+Escape exec xkill
 # Browser
 bindsym $mod+b exec --no-startup-id exo-open --launch webbrowser;focus
 
+
 # Text Editor
-bindsym $mod+h exec exec xfce4-terminal -e "helix";focus
+bindsym $mod+h exec xfce4-terminal -e "helix";focus
 
 # file management
 for_window [class="pcmanfm"] focus
@@ -578,9 +579,9 @@ mode "$mode_gaps_outer" {
 ################# picom of i3wm
 
 # if you want transparency on non-focused windows, ...
-exec_always --no-startup-id picom --config ~/.config/i3/picom.conf
+# exec_always --no-startup-id picom --config ~/.config/i3/picom.conf
 
-bindsym control+mod1+o exec --no-startup-id ~/.config/i3/scripts/picom-toggle.sh
+# bindsym control+mod1+o exec --no-startup-id ~/.config/i3/scripts/picom-toggle.sh
 
 ################ CUSTOM custom
 
