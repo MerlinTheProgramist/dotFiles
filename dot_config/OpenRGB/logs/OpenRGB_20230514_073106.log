@@ -1,0 +1,94 @@
+    OpenRGB v0.8
+    Commit:  from 
+    Launched: 20230514_073106
+====================================================================================================
+
+1001  |Info:    Saving detector settings
+1002  |Info:    ------------------------------------------------------
+1002  |Info:    |               Start device detection               |
+1002  |Info:    ------------------------------------------------------
+1002  |Info:    Initializing HID interfaces: Success
+1007  |Info:    ------------------------------------------------------
+1007  |Info:    |             Detecting I2C interfaces               |
+1007  |Info:    ------------------------------------------------------
+1009  |Info:    Registering I2C interface: /dev/i2c-3 Device 10DE:1F02 Subsystem: 1458:4011
+1009  |Info:    Registering I2C interface: /dev/i2c-6 Device 10DE:1F02 Subsystem: 1458:4011
+1009  |Info:    Registering I2C interface: /dev/i2c-2 Device 10DE:1F02 Subsystem: 1458:4011
+1009  |Info:    Registering I2C interface: /dev/i2c-5 Device 10DE:1F02 Subsystem: 1458:4011
+1009  |Info:    ------------------------------------------------------
+1009  |Info:    |               Detecting I2C devices                |
+1009  |Info:    ------------------------------------------------------
+1010  |Info:    ------------------------------------------------------
+1010  |Info:    |               Detecting I2C PCI devices            |
+1010  |Info:    ------------------------------------------------------
+1010  |Info:    ------------------------------------------------------
+1010  |Info:    |               Detecting HID devices                |
+1010  |Info:    ------------------------------------------------------
+1184  |Info:    [X570 AORUS MASTER] Registering RGB controller
+1605  |Info:    [G502 HERO SE] Registering RGB controller
+1605  |Info:    ------------------------------------------------------
+1605  |Info:    |              Detecting other devices               |
+1605  |Info:    ------------------------------------------------------
+1617  |Info:    ------------------------------------------------------
+1617  |Info:    |                Detection completed                 |
+1617  |Info:    ------------------------------------------------------
+1617  |Dialog:  <h2>WARNING:</h2><p>One or more I2C/SMBus interfaces failed to initialize.</p><p>RGB DRAM modules and some motherboards' onboard RGB lighting will not be available without I2C/SMBus.</p><p>On Linux, this is usually because the i2c-dev module is not loaded.  You must load the i2c-dev module along with the correct i2c driver for your motherboard.  This is usually i2c-piix4 for AMD systems and i2c-i801 for Intel systems.</p><p>See <a href='https://help.openrgb.org/'>help.openrgb.org</a> for additional troubleshooting steps if you keep seeing this message.<br></p>
+1020458|Info:    ------------------------------------------------------
+1020458|Info:    |               Start device detection               |
+1020458|Info:    ------------------------------------------------------
+1020458|Info:    Initializing HID interfaces: Success
+1020462|Info:    ------------------------------------------------------
+1020462|Info:    |             Detecting I2C interfaces               |
+1020462|Info:    ------------------------------------------------------
+1020462|Info:    Registering I2C interface: /dev/i2c-3 Device 10DE:1F02 Subsystem: 1458:4011
+1020462|Info:    Registering I2C interface: /dev/i2c-6 Device 10DE:1F02 Subsystem: 1458:4011
+1020462|Info:    Registering I2C interface: /dev/i2c-2 Device 10DE:1F02 Subsystem: 1458:4011
+1020462|Info:    Registering I2C interface: /dev/i2c-5 Device 10DE:1F02 Subsystem: 1458:4011
+1020462|Info:    ------------------------------------------------------
+1020462|Info:    |               Detecting I2C devices                |
+1020462|Info:    ------------------------------------------------------
+1020462|Info:    ------------------------------------------------------
+1020462|Info:    |               Detecting I2C PCI devices            |
+1020462|Info:    ------------------------------------------------------
+1020463|Info:    ------------------------------------------------------
+1020463|Info:    |               Detecting HID devices                |
+1020463|Info:    ------------------------------------------------------
+1020631|Info:    [X570 AORUS MASTER] Registering RGB controller
+1021051|Info:    [G502 HERO SE] Registering RGB controller
+1021051|Info:    ------------------------------------------------------
+1021051|Info:    |              Detecting other devices               |
+1021051|Info:    ------------------------------------------------------
+1021052|Info:    ------------------------------------------------------
+1021052|Info:    |                Detection completed                 |
+1021052|Info:    ------------------------------------------------------
+1021052|Dialog:  <h2>WARNING:</h2><p>One or more I2C/SMBus interfaces failed to initialize.</p><p>RGB DRAM modules and some motherboards' onboard RGB lighting will not be available without I2C/SMBus.</p><p>On Linux, this is usually because the i2c-dev module is not loaded.  You must load the i2c-dev module along with the correct i2c driver for your motherboard.  This is usually i2c-piix4 for AMD systems and i2c-i801 for Intel systems.</p><p>See <a href='https://help.openrgb.org/'>help.openrgb.org</a> for additional troubleshooting steps if you keep seeing this message.<br></p>
+1093176|Info:    ------------------------------------------------------
+1093176|Info:    |               Start device detection               |
+1093176|Info:    ------------------------------------------------------
+1093176|Info:    Initializing HID interfaces: Success
+1093180|Info:    ------------------------------------------------------
+1093180|Info:    |             Detecting I2C interfaces               |
+1093180|Info:    ------------------------------------------------------
+1093181|Info:    Registering I2C interface: /dev/i2c-3 Device 10DE:1F02 Subsystem: 1458:4011
+1093181|Info:    Registering I2C interface: /dev/i2c-6 Device 10DE:1F02 Subsystem: 1458:4011
+1093181|Info:    Registering I2C interface: /dev/i2c-2 Device 10DE:1F02 Subsystem: 1458:4011
+1093181|Info:    Registering I2C interface: /dev/i2c-5 Device 10DE:1F02 Subsystem: 1458:4011
+1093181|Info:    ------------------------------------------------------
+1093181|Info:    |               Detecting I2C devices                |
+1093181|Info:    ------------------------------------------------------
+1093181|Info:    ------------------------------------------------------
+1093181|Info:    |               Detecting I2C PCI devices            |
+1093181|Info:    ------------------------------------------------------
+1093181|Info:    ------------------------------------------------------
+1093181|Info:    |               Detecting HID devices                |
+1093181|Info:    ------------------------------------------------------
+1093347|Info:    [X570 AORUS MASTER] Registering RGB controller
+1093768|Info:    [G502 HERO SE] Registering RGB controller
+1093768|Info:    ------------------------------------------------------
+1093768|Info:    |              Detecting other devices               |
+1093768|Info:    ------------------------------------------------------
+1093769|Info:    ------------------------------------------------------
+1093769|Info:    |                Detection completed                 |
+1093769|Info:    ------------------------------------------------------
+1093769|Dialog:  <h2>WARNING:</h2><p>One or more I2C/SMBus interfaces failed to initialize.</p><p>RGB DRAM modules and some motherboards' onboard RGB lighting will not be available without I2C/SMBus.</p><p>On Linux, this is usually because the i2c-dev module is not loaded.  You must load the i2c-dev module along with the correct i2c driver for your motherboard.  This is usually i2c-piix4 for AMD systems and i2c-i801 for Intel systems.</p><p>See <a href='https://help.openrgb.org/'>help.openrgb.org</a> for additional troubleshooting steps if you keep seeing this message.<br></p>
+1234214|ERROR:   [OpenRGBPluginsPage] Failed to install plugin: filesystem error: cannot copy: No such file or directory [] [/home/merlin/.config/OpenRGB/plugins/]

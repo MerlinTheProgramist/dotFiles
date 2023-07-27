@@ -1,0 +1,43 @@
+    OpenRGB v0.8
+    Commit:  from 
+    Launched: 20230708_184546
+====================================================================================================
+
+1010  |Info:    Found file: my_profile.orp attempting to validate header
+1010  |Info:    Valid v3 profile found for my_profile
+1010  |Info:    Found file: Default.orp attempting to validate header
+1010  |Info:    Valid v3 profile found for Default
+2014  |Info:    ------------------------------------------------------
+2014  |Info:    |               Start device detection               |
+2014  |Info:    ------------------------------------------------------
+2014  |Info:    Initializing HID interfaces: Success
+2018  |Info:    ------------------------------------------------------
+2018  |Info:    |             Detecting I2C interfaces               |
+2018  |Info:    ------------------------------------------------------
+2018  |Info:    Registering I2C interface: /dev/i2c-3 Device 10DE:1F02 Subsystem: 1458:4011
+2018  |Info:    Registering I2C interface: /dev/i2c-1 Device 10DE:1F02 Subsystem: 1458:4011
+2018  |Info:    Registering I2C interface: /dev/i2c-6 Device 10DE:1F02 Subsystem: 1458:4011
+2018  |Info:    Registering I2C interface: /dev/i2c-4 Device 10DE:1F02 Subsystem: 1458:4011
+2018  |Info:    Registering I2C interface: /dev/i2c-2 Device 10DE:1F02 Subsystem: 1458:4011
+2018  |Info:    Registering I2C interface: /dev/i2c-0 Device 10DE:1F02 Subsystem: 1458:4011
+2018  |Info:    Registering I2C interface: /dev/i2c-5 Device 10DE:1F02 Subsystem: 1458:4011
+2018  |Info:    ------------------------------------------------------
+2018  |Info:    |               Detecting I2C devices                |
+2018  |Info:    ------------------------------------------------------
+2019  |Info:    ------------------------------------------------------
+2019  |Info:    |               Detecting I2C PCI devices            |
+2019  |Info:    ------------------------------------------------------
+2019  |Info:    ------------------------------------------------------
+2019  |Info:    |               Detecting HID devices                |
+2019  |Info:    ------------------------------------------------------
+2193  |Info:    [X570 AORUS MASTER] Registering RGB controller
+2614  |Info:    [G502 HERO SE] Registering RGB controller
+2614  |Info:    ------------------------------------------------------
+2614  |Info:    |              Detecting other devices               |
+2614  |Info:    ------------------------------------------------------
+2731  |Info:    ------------------------------------------------------
+2731  |Info:    |                Detection completed                 |
+2731  |Info:    ------------------------------------------------------
+2731  |Info:    Profile loading: FAILED! for X570 AORUS MASTER @ HID: /dev/hidraw0
+2731  |Info:    Profile loading: FAILED! for G502 HERO SE @ HID: /dev/hidraw6 (Receiver) 
+Wireless Index: 255

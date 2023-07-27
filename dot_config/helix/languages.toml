@@ -8,6 +8,9 @@ language-server = {command = "arduino-language-server", args=["-clangd /usr/bin/
 
 [[language]]
 name="cpp"
+config = {"clangd.fallbackFlags" = ["-std=c++17"] }
+
+# file-types = ["cpp", "h" ,"cu"]
 [language.auto-pairs]
 # '<' = '>' 
 
@@ -31,3 +34,9 @@ file-types = ["asm","nasm","s","S"]
 language-server = { command = "asm-lsp"}
 comment-token = ";"
 indent = {tab-width = 2, unit="  "}
+
+[[language]]
+name="python"
+
+[[language]]
+name="html"

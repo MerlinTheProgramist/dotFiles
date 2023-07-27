@@ -1,0 +1,79 @@
+21:10:30 [info] [LOG SESSION] ---------- START ----------
+21:10:30 [info] [PluginFactory] loading plugins
+21:10:30 [info] [PluginFactory] loaded: /usr/share/musikcube/plugins/libserver.so
+21:10:30 [info] [PluginFactory] loaded: /usr/share/musikcube/plugins/libpulseout.so
+21:10:30 [info] [PluginFactory] loaded: /usr/share/musikcube/plugins/libnullout.so
+21:10:30 [info] [PluginFactory] loaded: /usr/share/musikcube/plugins/libsndioout.so
+21:10:30 [info] [PluginFactory] loaded: /usr/share/musikcube/plugins/libtaglibreader.so
+21:10:30 [info] [PluginFactory] loaded: /usr/share/musikcube/plugins/libhttpdatastream.so
+21:10:30 [info] [PluginFactory] loaded: /usr/share/musikcube/plugins/libopenmptdecoder.so
+21:10:30 [info] [PluginFactory] loaded: /usr/share/musikcube/plugins/libgmedecoder.so
+21:10:30 [info] [PluginFactory] loaded: /usr/share/musikcube/plugins/libportaudioout.so
+21:10:30 [info] [PluginFactory] loaded: /usr/share/musikcube/plugins/libstockencoders.so
+21:10:30 [info] [PluginFactory] loaded: /usr/share/musikcube/plugins/libffmpegdecoder.so
+21:10:30 [info] [PluginFactory] loaded: /usr/share/musikcube/plugins/libsupereqdsp.so
+21:10:30 [info] [PluginFactory] loaded: /usr/share/musikcube/plugins/libalsaout.so
+21:10:30 [info] [PluginFactory] loaded: /usr/share/musikcube/plugins/libmpris.so
+21:10:30 [info] [PluginFactory] loaded: /usr/share/musikcube/plugins/libpipewireout.so
+21:10:30 [info] [PortAudioOut] Pa_Initialize() return code: 0
+21:10:30 [info] [PipeWireOut] shutdown started
+21:10:30 [info] [PipeWireOut] shutdown complete
+21:10:30 [warning] [PortAudioOut] Pa_AbortStream() return code: -9988
+21:10:30 [warning] [PortAudioOut] Pa_CloseStream() return code: -9988
+21:10:30 [info] [PortAudioOut] Pa_Terminate() return code: 0
+21:10:30 [info] [Indexer] indexer source 155697690 running...
+21:10:30 [info] [LocalLibrary] query 'DirectoryTrackListQuery' enqueued
+21:10:30 [info] [LocalLibrary] query 'DirectoryTrackListQuery' running
+21:10:30 [info] [LocalLibrary] query 'DirectoryTrackListQuery' finished with status=4
+21:10:30 [info] [Indexer] indexer source 155697690 finished
+21:10:30 [info] [Indexer] indexer source -1303229654 running...
+21:10:30 [info] [Indexer] indexer source -1303229654 finished
+21:10:30 [info] [Indexer] scanning /home/merlin/music/
+21:10:30 [info] [Indexer] scan completed successfully
+21:10:30 [info] [Indexer] cleanup 1/2
+21:10:30 [info] [Indexer] cleanup 2/2
+21:10:30 [info] [Indexer] optimizing
+21:10:30 [info] [LocalLibrary] query 'DirectoryTrackListQuery' enqueued
+21:10:30 [info] [LocalLibrary] query 'DirectoryTrackListQuery' running
+21:10:30 [info] [LocalLibrary] query 'DirectoryTrackListQuery' enqueued
+21:10:30 [info] [LocalLibrary] query 'SearchTrackListQuery' enqueued
+21:10:30 [info] [Indexer] done!
+21:10:30 [info] [LocalLibrary] query 'DirectoryTrackListQuery' finished with status=4
+21:10:30 [info] [LocalLibrary] query 'DirectoryTrackListQuery' running
+21:10:30 [info] [LocalLibrary] query 'DirectoryTrackListQuery' finished with status=4
+21:10:30 [info] [LocalLibrary] query 'SearchTrackListQuery' running
+21:10:30 [info] [LocalLibrary] query 'SearchTrackListQuery' finished with status=4
+21:10:30 [info] [LocalLibrary] query 'PersistedPlayQueueQuery' enqueued
+21:10:30 [info] [LocalLibrary] query 'PersistedPlayQueueQuery' running
+21:10:30 [info] [LocalLibrary] query 'PersistedPlayQueueQuery' finished with status=4
+21:10:30 [info] [LocalLibrary] query 'CategoryListQuery' enqueued
+21:10:30 [info] [LocalLibrary] query 'CategoryListQuery' running
+21:10:30 [info] [LocalLibrary] query 'CategoryListQuery' enqueued
+21:10:30 [info] [LocalLibrary] query 'TrackMetadataBatchQuery' enqueued
+21:10:30 [info] [LocalLibrary] query 'CategoryListQuery' finished with status=4
+21:10:30 [info] [LocalLibrary] query 'CategoryListQuery' running
+21:10:30 [info] [LocalLibrary] query 'CategoryListQuery' finished with status=4
+21:10:30 [info] [LocalLibrary] query 'TrackMetadataBatchQuery' running
+21:10:30 [info] [LocalLibrary] query 'TrackMetadataBatchQuery' finished with status=4
+21:10:30 [info] [LocalLibrary] query 'TrackMetadataQuery' enqueued
+21:10:30 [info] [LocalLibrary] query 'TrackMetadataQuery' running
+21:10:30 [info] [LocalLibrary] query 'TrackMetadataQuery' finished with status=4
+21:10:30 [info] [GaplessTransport] starting track at /home/merlin/music/metal/The HU - Wolf Totem (Official Music Video)-jM8dCGIm6yc.m4a
+21:10:30 [info] [Player] new instance created
+21:10:30 [info] [GaplessTransport] stop
+21:10:30 [info] [Stream] opening /home/merlin/music/metal/The HU - Wolf Totem (Official Music Video)-jM8dCGIm6yc.m4a
+21:10:30 [info] [LocalFileStream] opening file: /home/merlin/music/metal/The HU - Wolf Totem (Official Music Video)-jM8dCGIm6yc.m4a
+21:10:30 [info] [ffmpegdecoder] parsing data stream...
+21:10:30 [info] [LocalLibrary] query 'CategoryTrackListQuery' enqueued
+21:10:30 [info] [LocalLibrary] query 'CategoryTrackListQuery' enqueued
+21:10:30 [info] [LocalLibrary] query 'CategoryTrackListQuery' running
+21:10:30 [info] [LocalLibrary] query 'CategoryTrackListQuery' finished with status=4
+21:10:30 [info] [LocalLibrary] query 'CategoryTrackListQuery' running
+21:10:30 [info] [LocalLibrary] query 'CategoryTrackListQuery' finished with status=4
+21:10:30 [info] [ffmpegdecoder] found audio stream!
+21:10:30 [info] [ffmpegdecoder] resolved codec: AAC (Advanced Audio Coding)
+21:10:30 [info] [Streams] found a decoder for /home/merlin/music/metal/The HU - Wolf Totem (Official Music Video)-jM8dCGIm6yc.m4a
+21:10:33 [info] [LocalLibrary] query 'PersistedPlayQueueQuery' enqueued
+21:10:33 [info] [LocalLibrary] query 'PersistedPlayQueueQuery' running
+21:10:33 [info] [LocalLibrary] query 'PersistedPlayQueueQuery' finished with status=4
+21:10:33 [info] [GaplessTransport] stop

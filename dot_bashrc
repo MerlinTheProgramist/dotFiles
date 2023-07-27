@@ -18,6 +18,11 @@ export HISTCONTROL=ignoreboth:erasedups
 export EDITOR='helix'
 export VISUAL='helix'
 
+# esp enviroment
+alias get_idf='source $HOME/esp/esp-idf/export.sh'
+# source $HOME/esp/esp-idf/export.sh
+
+
 #PS1='[\u@\h \W]\$ '
 
 if [ -d "$HOME/.bin" ] ;
@@ -31,6 +36,9 @@ fi
 
 export PATH="$HOME/Programs/4coder/4coder:$PATH"
 export PATH="/usr/bin/blender:$PATH"
+
+export PATH="/home/merlin/.local/share/gem/ruby/3.0.0/bin:$PATH"
+
 #ignore upper and lowercase when TAB completion
 bind "set completion-ignore-case on"
 
@@ -298,6 +306,11 @@ compile_cpp_d()
 compile_asm64_d()
 {
   yasm -felf64 -m amd64 -g dwarf2 $1
+}
+
+nvcc_rtx()
+{
+  nvcc $1 --gpu-architecture=compute_75 --gpu-code=sm_75 -o ${@: -1}
 }
 
 # # ex = EXtractor for all kinds of archives
