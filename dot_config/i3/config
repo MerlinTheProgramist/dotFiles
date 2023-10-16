@@ -532,10 +532,10 @@ popup_during_fullscreen smart
 # want it
 
 for_window [class="^.*"] border pixel 2
-gaps inner 5
-gaps outer 5
-smart_gaps on
-smart_borders on
+# gaps inner 5
+# gaps outer 5
+# smart_gaps on
+# smart_borders on
 
 ################# i3 gaps change
 
@@ -597,7 +597,7 @@ exec_always --no-startup-id xinput map-to-output "$( xinput list --id-only "Netw
 
 
 bar {
-	output $firstMonitor
+	# output $firstMonitor
 	
 	tray_output $firstMonitor
 	#tray_padding 2px

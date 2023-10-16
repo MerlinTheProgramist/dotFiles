@@ -265,7 +265,7 @@ alias sr="sudo reboot"
 alias bls="betterlockscreen -u /usr/share/backgrounds/arcolinux/"
 
 #
-alias stop_docker="docker stop $(docker ps -q)"
+# alias stop_docker="docker stop $(docker ps -q)"
 
 # CHMOD
 add_exe()
@@ -375,7 +375,7 @@ alias personal='cp -Rf /personal/* ~'
 alias anaconda='source /opt/anaconda/bin/deactivate root'
 
 # Rust
-source "$HOME/.cargo/env"
+# source "$HOME/.cargo/env"
 
 # Discord with fixed lagging issue (due to some notificatio driver)
 alias discord="LIBVA_DRIVER_NAME=radeonsi discord --ignore-gpu-blocklist --disable-features=UseOzonePlatform --enable-features=VaapiVideoDecoder --use-gl=desktop --enable-gpu-rasterization --enable-zero-copy" 
@@ -429,6 +429,6 @@ PS1='\[\e[0m\]┌[\[\e[0m\]\u[\[\e[0m\]\[`tput setaf 2`\]\H\[\033[00m\]\n\
 # <<< conda initialize <<<
 
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-. "$HOME/.cargo/env"
+# [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+# . "$HOME/.cargo/env"
 

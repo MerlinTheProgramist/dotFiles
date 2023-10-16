@@ -18,18 +18,10 @@ format="$icon {$utilization} {$frequency} "
 [block.theme_overrides]
 idle_bg="#FF4C29"
 
-[[block]]
-block = "nvidia_gpu"
-#show_clocks = true
-format = " RTX 2070 $utilization $memory $temperature "
-interval = 1
-[block.theme_overrides]
-idle_bg="#334756"
-
 
 [[block]]
 block = "memory"
-format = "{$mem_used}/{$mem_total} ({$mem_used_percents})"
+format = " {$mem_used}/{$mem_total} ({$mem_used_percents}) "
 interval = 5
 warning_mem = 80
 critical_mem = 95
@@ -37,6 +29,8 @@ critical_swap = 95
 [block.theme_overrides]
 idle_bg="#2C394B"
 
+[[block]]
+block="battery"
 
 [[block]]
 block = "sound"
