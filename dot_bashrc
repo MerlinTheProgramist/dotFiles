@@ -2,13 +2,6 @@
 # ~/.bashrc
 #
 
-#Ibus settings if you need them
-#type ibus-setup in terminal to change settings and start the daemon
-#delete the hashtags of the next lines and restart
-#export GTK_IM_MODULE=ibus
-#export XMODIFIERS=@im=dbus
-#export QT_IM_MODULE=ibus
-
 if [ "$XDG_SESSION_TYPE" == "wayland" ]; then
   export MOZ_ENABLE_WAYLAND=1
   export QT_QPA_PLATFORM=wayland
@@ -44,12 +37,10 @@ if [ -d "$HOME/.local/bin" ] ;
   then PATH="$HOME/.local/bin:$PATH"
 fi
 
-export PATH="/home/merlin/.local/share/gem/ruby/3.0.0/bin:$PATH"
+export PATH="/home/$USER/.local/share/gem/ruby/3.0.0/bin:$PATH"
 export PATH="~/rofi-translate:$PATH"
 export PATH="~/.cargo/bin/:$PATH"
 export PATH="~/.platformio/penv/bin:$PATH"
-
-
 
 diff-bin(){
   colordiff <(xxd $1) <(xxd $2)
@@ -81,22 +72,14 @@ alias cd..='cd ..'
 alias ..='cd ..'
 
 # remind of typo
-alias whitch="echo 'did you ment: which'"
-alias wchih="echo 'did you ment: which'"
-
-#alias pdw="pwd"
-alias udpate='sudo pacman -Syyu'
-alias upate='sudo pacman -Syyu'
-alias upqll="paru -Syu --noconfirm"
-alias upal="paru -Syu --noconfirm"
+alias whitch="echo 'did you ment: which, learn the commands!'"
+alias wchih="echo 'did you ment: which, learn the commands!'"
 
 # more intuitive shortcuts
 alias rm="rm -i"
 alias tr="trash"
 
-# vim
-alias vip="nvim /media/merlin/Projects"
-alias vim="nvim"
+# helix
 alias hx="helix"
 
 ## Colorize the grep command output for ease of use (good for log files)##
@@ -110,12 +93,6 @@ alias df='df -h'
 #pacman unlock
 alias unlock="sudo rm /var/lib/pacman/db.lck"
 alias rmpacmanlock="sudo rm /var/lib/pacman/db.lck"
-
-#arcolinux logout unlock
-alias rmlogoutlock="sudo rm /tmp/arcologout.lock"
-
-#which graphical card is working
-alias whichvga="/usr/local/bin/arcolinux-which-vga"
 
 #free
 alias free="free -mt"
@@ -162,23 +139,8 @@ alias cb='sudo cp /etc/skel/.bashrc ~/.bashrc && source ~/.bashrc'
 alias tobash="sudo chsh $USER -s /bin/bash && echo 'Now log out.'"
 alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Now log out.'"
 
-#switch between lightdm and sddm
-alias tolightdm="sudo pacman -S lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings --noconfirm --needed ; sudo systemctl enable lightdm.service -f ; echo 'Lightm is active - reboot now'"
-alias tosddm="sudo pacman -S sddm --noconfirm --needed ; sudo systemctl enable sddm.service -f ; echo 'Sddm is active - reboot now'"
-
-# kill commands
-# quickly kill conkies
-alias kc='killall conky'
-# quickly kill polybar
-alias kp='killall polybar'
-
 #hardware info --short
 alias hw="hwinfo --short"
-
-#skip integrity check
-alias paruskip='paru -S --mflags --skipinteg'
-alias yayskip='yay -S --mflags --skipinteg'
-alias trizenskip='trizen -S --skipinteg'
 
 #check vulnerabilities microcode
 alias microcode='grep . /sys/devices/system/cpu/vulnerabilities/*'
@@ -192,9 +154,6 @@ alias mirrora="sudo reflector --latest 30 --number 10 --sort age --save /etc/pac
 alias mirrorx="sudo reflector --age 6 --latest 20  --fastest 20 --threads 5 --sort rate --protocol https --save /etc/pacman.d/mirrorlist"
 alias mirrorxx="sudo reflector --age 6 --latest 20  --fastest 20 --threads 20 --sort rate --protocol https --save /etc/pacman.d/mirrorlist"
 alias ram='rate-mirrors --allow-root arch | sudo tee /etc/pacman.d/mirrorlist'
-
-#mounting the folder Public for exchange between host and guest on virtualbox
-alias vbm="sudo /usr/local/bin/arcolinux-vbox-share"
 
 #shopt
 # shopt -s autocd # change to named directory
@@ -215,9 +174,6 @@ alias ytv-best="yt-dlp -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+besta
 alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
 alias riplong="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -3000 | nl"
 
-#iso and version used to install ArcoLinux
-alias iso="cat /etc/dev-rel | awk -F '=' '/ISO/ {print $2}'"
-
 #Cleanup orphaned packages
 alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'
 
@@ -226,24 +182,6 @@ alias rg="rg --sort path"
 
 #get the error messages from journalctl
 alias jctl="journalctl -p 3 -xb"
-
-#nano for important configuration files
-#know what you do in these files
-alias nlightdm="sudo $EDITOR /etc/lightdm/lightdm.conf"
-alias npacman="sudo $EDITOR /etc/pacman.conf"
-alias ngrub="sudo $EDITOR /etc/default/grub"
-alias nconfgrub="sudo $EDITOR /boot/grub/grub.cfg"
-alias nmkinitcpio="sudo $EDITOR /etc/mkinitcpio.conf"
-alias nmirrorlist="sudo $EDITOR /etc/pacman.d/mirrorlist"
-alias narcomirrorlist='sudo nano /etc/pacman.d/arcolinux-mirrorlist'
-alias nsddm="sudo $EDITOR /etc/sddm.conf"
-alias nsddmk="sudo $EDITOR /etc/sddm.conf.d/kde_settings.conf"
-alias nfstab="sudo $EDITOR /etc/fstab"
-alias nnsswitch="sudo $EDITOR /etc/nsswitch.conf"
-alias nsamba="sudo $EDITOR /etc/samba/smb.conf"
-alias ngnupgconf="sudo nano /etc/pacman.d/gnupg/gpg.conf"
-alias nb="$EDITOR ~/.bashrc"
-alias nz="$EDITOR ~/.zshrc"
 
 #gpg
 #verify signature for isos
@@ -256,16 +194,6 @@ alias fix-keyserver="[ -d ~/.gnupg ] || mkdir ~/.gnupg ; cp /etc/pacman.d/gnupg/
 
 #fixes
 alias fix-permissions="sudo chown -R $USER:$USER ~/.config ~/.local"
-alias keyfix="/usr/local/bin/arcolinux-fix-pacman-databases-and-keys"
-alias key-fix="/usr/local/bin/arcolinux-fix-pacman-databases-and-keys"
-alias keys-fix="/usr/local/bin/arcolinux-fix-pacman-databases-and-keys"
-alias fixkey="/usr/local/bin/arcolinux-fix-pacman-databases-and-keys"
-alias fixkeys="/usr/local/bin/arcolinux-fix-pacman-databases-and-keys"
-alias fix-key="/usr/local/bin/arcolinux-fix-pacman-databases-and-keys"
-alias fix-keys="/usr/local/bin/arcolinux-fix-pacman-databases-and-keys"
-alias fix-sddm-config="/usr/local/bin/arcolinux-fix-sddm-config"
-alias fix-pacman-conf="/usr/local/bin/arcolinux-fix-pacman-conf"
-alias fix-pacman-keyserver="/usr/local/bin/arcolinux-fix-pacman-gpg-conf"
 
 #maintenance
 alias big="expac -H M '%m\t%n' | sort -h | nl"
@@ -284,14 +212,6 @@ alias sr="sudo reboot"
 
 # alias stop_docker="docker stop $(docker ps -q)"
 
-### FUNCTIONS
-# CHMOD
-add_exe()
-{
-  sudo chmod +x $1
-}
-
-
 mp4-to-mp3(){
   for f in *.mp4; do 
     ffmpeg -i "$f" "${f%.mp4}.mp3"; 
@@ -303,9 +223,9 @@ mp4-to-mp3(){
 tagdb(){
   cat $1 | fzf +x -i
 }
+
 linksdb(){
   tagdb "~/Documents/links.txt"
-
 }
 
 #give the list of all installed desktops - xsessions desktops
@@ -313,16 +233,9 @@ alias xd="ls /usr/share/xsessions"
 
 alias boox="networktablet"
 
-# alias gcc="gcc -fuse-ld=mold"
-# alias g++="g++ -fuse-ld=mold"
-
 compile_raylib()
 {
-  # if [ "$#" -ne "1"]; then 
-  #     echo "Podaj nazwę binarki, PLS?"
-  # else
   c++ -w -std=c++17 -I. -L. -lraylib -lglfw -lGL -lopenal -lm -pthread -ldl *.cpp -o "$1" -Wall
-  # fi
 }
 
 compile_cpp()
@@ -338,11 +251,6 @@ compile_cpp_d()
 compile_asm64_d()
 {
   yasm -felf64 -m amd64 -g dwarf2 $1
-}
-
-nvcc_rtx()
-{
-  nvcc $1 --gpu-architecture=compute_75 --gpu-code=sm_75 -o ${@: -1}
 }
 
 mkcd()
@@ -385,67 +293,25 @@ ex ()
   fi
 }
 
-# replace command with better ones
-# alias find="fd"
-
-#Leftwm aliases
-alias lti="leftwm-theme install"
-alias ltu="leftwm-theme uninstall"
-alias lta="leftwm-theme apply"
-alias ltupd="leftwm-theme update"
-alias ltupg="leftwm-theme upgrade"
-
-#arcolinux applications
-alias att="arcolinux-tweak-tool"
-alias adt="arcolinux-desktop-trasher"
-alias abl="arcolinux-betterlockscreen"
-alias agm="arcolinux-get-mirrors"
-alias amr="arcolinux-mirrorlist-rank-info"
-alias aom="arcolinux-osbeck-as-mirror"
-alias ars="arcolinux-reflector-simple"
-alias atm="arcolinux-tellme"
-alias avs="arcolinux-vbox-share"
-alias awa="arcolinux-welcome-app"
-
-# python defualt version
-alias python-shell="ipython"
 # git
 alias rmgitcache="rm -r ~/.cache/git"
 alias gitignore="git rm -r --cached . ; git add -A ; git commit -am 'ignore' ; git"
 alias git_re-add="git update-index --again"
-# gh compteion
-$SHELL ~/.gh_init.sh
+
+if [ -f "~/.gh_init.sh" ]; then
+  # gh compteion
+  $SHELL ~/.gh_init.sh
+fi
 
 # dictionary
 alias dict_pl_en="dict -d fd-pol-eng"
 alias dict_eng_pl="dict -d fd-eng-pol"
 
-# reload config 
-alias picom_reload="pkill -USR1 picom"
-
-# Discord with fixed lagging issue (due to some notificatio driver)
-alias discord="LIBVA_DRIVER_NAME=radeonsi discord --ignore-gpu-blocklist --disable-features=UseOzonePlatform --enable-features=VaapiVideoDecoder --use-gl=desktop --enable-gpu-rasterization --enable-zero-copy" 
-
 #create a file called .bashrc-personal and put all your personal aliases
-#in there. They will not be overwritten by skel.
-
 [[ -f ~/.bashrc-personal ]] && . ~/.bashrc-personal
 
-# reporting tools - install when not installed
+# reporting tools
 neofetch # | lolcat
-#screenfetch
-#alsi
-#paleofetch
-#fetch
-#hfetch
-#sfetch
-#ufetch
-#ufetch-arco
-#pfetch
-#sysinfo
-#sysinfo-retro
-#cpufetch
-#colorscript random
 
 # shortcut keys: [Esc] [s]
 bind '"\es":"sudo !#"'
@@ -454,16 +320,10 @@ parse_git_branch() {
  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
-# PS1='\[\e[0m\]┌\[\e[0m\]\u\[\e[0m\][`[ $? = 0 ] && X=2 || X=1; tput setaf $X`\]\H$(parse_git_branch)\[\033[00m\]\n└─⟴ '
-# PS1='\[\e[0m\]┌[\[\e[0m\]\u[\[\e[0m\]\[`tput setaf 2`\]\H\[\033[00m\]\n└\[\033[38;5;57m\]$(parse_git_branch)\[\033[00m\]→ '
-# PS1='\[\e[0m\]┌[\[\e[0m\]\u[\[\e[0m\]\[`tput setaf 2`\]\H\[\033[00m\]\n\
-# │\w
-# └\[\033[38;5;57m\]$(parse_git_branch)\[\033[00m\]→ '
 
-open-live-tex (){
+open_live_tex (){
   pandoc -t pdf "$1" | zathura -
 }
-
 
 alias matlab-term="matlab -nodesktop -nosplash"
 
@@ -472,10 +332,17 @@ alias ip-info="ip -br -c link show up"
 
 
 # get public ip
-alias ippub="curl ipinfo.io/ip"
+alias ippub="curl ipinfo.io/ip;"
 
 
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+if which pyenv 2>/dev/null ; then
+  eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
+fi
 
-eval "$(starship init bash)"
+if which starship >/dev/null ; then
+  eval "$(starship init bash)"
+else
+  PS1='\[\e[0m\]┌[\[\e[0m\]\u[\[\e[0m\]\[`tput setaf 2`\]\H\[\033[00m\]\n└\[\033[38;5;57m\]$(parse_git_branch)\[\033[00m\]→ '
+fi
+
