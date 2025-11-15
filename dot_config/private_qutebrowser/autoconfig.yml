@@ -17,10 +17,6 @@ settings:
         L: forward
   colors.webpage.darkmode.enabled:
     global: false
-  content.media.audio_capture:
-    https://teams.microsoft.com: true
-  content.notifications.enabled:
-    https://www.netflix.com: false
   downloads.prevent_mixed_content:
     global: false
   editor.command:
