@@ -1,0 +1,62 @@
+# theme = "monokai_pro_octagon"
+# theme = "dracula_at_night"
+
+# theme = "molokai_custom"
+theme = "sonokai"
+
+[editor]
+bufferline = "multiple"
+# highlight entire line when selected
+cursorline = true
+line-number = "relative"
+color-modes = true
+
+auto-pairs = false
+[editor.smart-tab]
+enable=true
+supersede-menu=true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+[editor.indent-guides]
+render = true
+character = "|"
+skip-levels = 1
+
+
+[editor.lsp]
+# Disable automatically popups of signature parameter help
+auto-signature-help = false
+# Show LSP messages in the status line
+display-messages = true
+
+# version-control shows git branch
+[editor.statusline]
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+left = ["mode", "separator","file-name", "version-control"]
+center = ["spinner"]
+right = ["diagnostics", "selections", "position", "file-encoding"]
+separator = "|"
+
+[editor.file-picker]
+hidden = false
+
+# MACROS:
+# select back line and current line
+[keys.normal]
+A-x = "extend_to_line_bounds"
+X = ["extend_line_up", "extend_to_line_bounds"]
+[keys.select]
+A-x = "extend_to_line_bounds"
+X = ["extend_line_up", "extend_to_line_bounds"]
+
+# external functionaliy macros
+[keys.normal."+"]
+# macro for generating pdf from markdown and latex
+m = ":run-shell-command pandoc -t pdf \"<C-r>%\" | zathura -"
+
+

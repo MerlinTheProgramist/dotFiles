@@ -1,0 +1,178 @@
+
+
+[[language]]
+name="spice"
+file-types=["cir", "sp"]
+indent = { tab-width = 2, unit = "  " }
+language-servers = ["spice-lsp"]
+scope = "source.cir"
+comment-token = "*"
+
+[language-server.spice-lsp]
+command = "/home/merlin/Projects/spice-lsp/target/debug/spice-lsp"
+[[grammar]]
+name = "spice"
+source = { path = "/home/merlin/Projects/spice-lsp/tree-sitter-spice"}
+
+
+[[language]]
+name = "json"
+auto-format = false
+
+[language-server.clangd]
+command = "clangd"
+# args = ["--fallback-style=~/.config/helix/clang-format"]
+config = {"clangd.fallbackFlags" = ["-std=c++23"]}
+
+
+# another c++ formatter alternative to clangd (but not everything works)
+[language-server.ccls]
+command = "ccls"
+# command line args
+# args = ["--init={\"completion\":{\"detailedLabel\":false}}"]
+# initialization options
+config = {comletion = {detailedLabel = false}, clang = {extraArgs = ["-std=c++23"]}} 
+# required-root-patterns = ["Makefile", ".git"]
+
+# [[language]]
+# name="cpp"
+# auto-format=false
+# # formatter={command = "clang-format", args = ["-style=~/.config/helix/clang-format"]}
+# language-servers = ["clangd"]
+
+
+# file-types = ["cpp", "h" ,"cu"]
+# [language.auto-pairs]
+# '<' = '>' 
+
+# [[language]]
+# name="rust"
+# auto-format = false
+
+# [language-server.rust-analyzer.config.check]
+# command = "clippy"
+# [[language]]
+# name = "rust"
+# scope = "source.rust"
+# injection-regex = "rust"
+# file-types = ["rs"]
+# roots = ["Cargo.toml", "Cargo.lock","main.rs"]
+# auto-format = true
+# comment-token = "//"
+# language-server = { command = "rust-analyzer",  }
+
+
+# enable all features while using rust-analyzer to not get stupid errors
+# while working on a cargo crate with features
+[language-server.rust-analyzer]
+config = { cargo = { features = "all" } }
+
+
+[language-server.asm]
+command = "asm-lsp"
+[[language]]
+name="asm"
+file-types=["asm","s", "S", "nasm"]
+indent = { tab-width = 2, unit = "  " }
+language-servers = ["asm"]
+scope = "source.asm"
+comment-token = ";"
+
+# [[language]]
+# name="asm"
+# scope = "source.asm"
+# injection-regex = "asm"
+# roots = []
+# file-types = ["asm","nasm","s","S"]
+# language-servers = ["asm"]
+# comment-token = ";"
+# indent = {tab-width = 2, unit="  "}
+
+# [[language]]
+# name="python"
+# [language-server.pylsp]
+# executable = "~/.config/helix/pylsp-helix.sh"
+
+[[language]]
+name="html"
+
+[[language]]
+name = "latex"
+
+[language-server.texlab.config.texlab.build]
+onSave = true
+forwardSearchAfter = true
+
+[language-server.texlab.config.texlab.forwardSearch]
+executable = "zathura"
+args = [ "--synctex-forward", "%l:1:%f", "%p" ]
+
+[language-server.texlab.config.texlab.chktex]
+onEdit = true
+
+[[language]]
+name="markdown"
+soft-wrap.enable = true
+language-servers = ["deno"]
+
+# Language servers
+
+# Diagnostic language server.
+# See https://github.com/iamcco/diagnostic-languageserver .
+
+[language-server.dls]
+command = "deno"
+args = [ "run", "--allow-read", "--allow-env", "--allow-run", "--allow-sys", "npm:diagnostic-languageserver", "--stdio", "--log-level=2" ]
+
+[language-server.dls.config.filetypes]
+"*" = "cspell"
+
+# CSpell https://cspell.org/docs/getting-started/ .
+
+[language-server.dls.config.linters.cspell]
+command = "deno"
+args = [ "run", "--allow-read", "--allow-env", "npm:cspell", "stdin" ]
+sourceName = "cspell"
+rootPatterns = [
+  ".cspell.json",
+  "cspell.json",
+  ".cSpell.json",
+  "cSpell.json",
+  "cspell.config.js",
+  "cspell.config.cjs",
+  "cspell.config.json",
+  "cspell.config.yaml",
+  "cspell.config.yml",
+  "cspell.yaml",
+  "cspell.yml",
+]
+debounce = 1000
+formatLines = 1
+formatPattern = [
+  "^[^:]+:(\\d+):(\\d+) - (.*) \\((.*)\\)$",
+  { line = 1, column = 2, security = 3, message = [3, " (", 4, ")"] },
+]
+securities = { "Unknown word" = "warning" }
+
+
+
+
+
+[[grammar]]
+name = "cpp"
+source = { git = "https://github.com/tree-sitter/tree-sitter-cpp", rev = "a90f170f92d5d70e7c2d4183c146e61ba5f3a457" }
+
+[[language]]
+name = "arduino"
+# grammar="cpp"
+scope = "source.arduino"
+injection-regex = "arduino"
+file-types = ["ino"]
+roots = [ "sketch.yaml"]
+language-servers = [ "arduino-lsp" ]
+[[grammar]]
+name = "arduino"
+source = { git = "https://github.com/ObserverOfTime/tree-sitter-arduino", rev = "db929fc6822b9b9e1211678d508f187894ce0345"}
+[language-server.arduino-lsp]
+command = "arduino-language-server" 
+args = ["-clangd", "clangd", "-cli", "arduino-cli", "-cli-config", "~/.arduino15/arduino-cli.yaml"]

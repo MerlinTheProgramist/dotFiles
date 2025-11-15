@@ -1,0 +1,59 @@
+[core]
+	editor = helix
+	autocrlf = input
+	pager = delta
+[diff]
+	tool = code
+[difftool "vscode"]
+  cmd = code --wait --diff $LOCAL $REMOTE
+[merge]
+	tool = meld
+	conflictStyle = diff3
+	prompt = false
+[mergetool "vscode"]
+  cmd = code --wait $MERGED
+
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[user]
+	email = kvasjir@proton.me
+	name = Merlin
+[rerere]
+	enabled = true
+[branch]
+	sort = -committerdate
+[init]
+	defaultBranch = master
+[mergetool]
+	prompt = true
+[mergetool "fugitive"]
+	cmd = nvim -f -c \"Gvdiffsplit!\" \"$MERGED\"
+
+[interactive]
+    diffFilter = delta --color-only --features=interactive
+
+[delta]
+    features = decorations
+
+[delta "interactive"]
+    keep-plus-minus-markers = false
+
+[delta "decorations"]
+    commit-decoration-style = blue ol
+    commit-style = raw
+    file-style = omit
+    hunk-header-decoration-style = blue box
+    hunk-header-file-style = red
+    hunk-header-line-number-style = "#067a00"
+    hunk-header-style = file line-number syntax
+
+[alias]
+lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all
+
+[push]
+	autoSetupRemote = true
+	autoSetupRemote = true
