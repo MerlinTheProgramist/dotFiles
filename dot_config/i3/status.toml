@@ -18,6 +18,12 @@ format="$icon {$utilization} {$frequency} "
 [block.theme_overrides]
 idle_bg="#FF4C29"
 
+[[block]]
+block = "nvidia_gpu"
+[block.theme_overrides]
+idle_bg="#76B900"
+good_bg="#76B900"
+warning_bg="#76B900"
 
 [[block]]
 block = "memory"
@@ -29,41 +35,6 @@ critical_swap = 95
 [block.theme_overrides]
 idle_bg="#2C394B"
 
-# first battery internal
-[[block]]
-block="battery"
-interval = 5
-device="BAT0"
-# empty_threshold = 1
-# full_threshold = 99
-format = " INT $icon{$percentage|} {$time|} "
-empty_format = " INT $icon{$percentage|} {$time|} "
-charging_format = " INT $icon{$percentage|} {$time|} "
-full_format = " INT $icon{$percentage|} {$time|} "
-
-# second battery removable 
-[[block]]
-block="battery"
-interval = 5
-device="BAT1"
-# empty_threshold = 1
-# full_threshold = 99
-format = " REM $icon{$percentage|} {$time|} "
-empty_format = " REM $icon{$percentage|} {$time|} "
-charging_format = " REM $icon{$percentage|} {$time|} "
-full_format = " REM $icon{$percentage|} {$time|} "
-
-[[block]]
-block="backlight"
-[block.theme_overrides]
-idle_bg="#202939"
-
-[[block]]
-block="hueshift"
-hue_shifter="gammastep"
-[block.theme_overrides]
-idle_bg="#ece81a"
-idle_fg="#222ea1"
 
 [[block]]
 block = "sound"

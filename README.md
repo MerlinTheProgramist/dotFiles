@@ -1,5 +1,5 @@
-# My config files for laptop
-Check out the other branch for PC setup,  
+# My config files for PC
+Check out the other branch for laptop setup,  
 managed with help of [chezmoi](https://www.chezmoi.io/),  
 applying all of my configuration is as easy as:
 ```bash
