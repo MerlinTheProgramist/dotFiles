@@ -1,4 +1,5 @@
-# My config files 
+# My config files for laptop
+Check out the other branch for PC setup,  
 managed with help of [chezmoi](https://www.chezmoi.io/),  
 applying all of my configuration is as easy as:
 ```bash
@@ -12,6 +13,7 @@ contains configs for:
 - [ranger](https://ranger.fm/) (terminal file manager)
 - [i3wm](https://i3wm.org/) (xorg tiling window manager)
 - [sway](https://swaywm.org/) (wayland tiling window manager)
+- [i3status-rs](https://github.com/greshake/i3status-rust) (status bar, required in i3 and sway)
 - [qutebrowser](https://qutebrowser.org/) (browser with vim keybindings)
 - [git](https://git-scm.com/) (some helpful shortcuts), requires: [delta](https://github.com/dandavison/delta?tab=readme-ov-file)
 ---
