@@ -3,7 +3,7 @@ Check out the other branch for PC setup,
 managed with help of [chezmoi](https://www.chezmoi.io/),  
 applying all of my configuration is as easy as:
 ```bash
-chezmoi init --apply https://github.com/MerlinTheProgramist/dotFiles.git
+chezmoi init --apply https://github.com/MerlinTheProgramist/dotFiles/tree/laptop_config.git
 ```
 ---
 contains configs for:
