@@ -342,9 +342,9 @@ exec_always --no-startup-id numlockx on
 #exec --no-startup-id conky -c ~/.config/i3/system-overview
 
 # feh sets wallpaper
-	exec --no-startup-id feh --bg-center --bg-scale /usr/share/wallpapers/$(ls /usr/share/wallpapers | shuf -n 1)
+exec --no-startup-id feh --bg-center --bg-scale $(find /usr/share/wallpapers/horizontal -type f | shuf -n 1)
 	# on pressing MENU key
-	bindsym F9 exec "feh --bg-center --bg-scale /usr/share/wallpapers/$(ls /usr/share/wallpapers | shuf -n 1)"
+bindsym F9 exec "feh --bg-center --bg-scale $(find /usr/share/wallpapers/horizontal -type f | shuf -n 1)"
 
 # redshift
 exec --no-startup-id redshift -o -l $(cat ~/.location_coords.txt)
