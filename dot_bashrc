@@ -2,13 +2,6 @@
 # ~/.bashrc
 #
 
-#Ibus settings if you need them
-#type ibus-setup in terminal to change settings and start the daemon
-#delete the hashtags of the next lines and restart
-#export GTK_IM_MODULE=ibus
-#export XMODIFIERS=@im=dbus
-#export QT_IM_MODULE=ibus
-
 if [ "$XDG_SESSION_TYPE" == "wayland" ]; then
   export MOZ_ENABLE_WAYLAND=1
   export QT_QPA_PLATFORM=wayland
@@ -44,7 +37,7 @@ if [ -d "$HOME/.local/bin" ] ;
   then PATH="$HOME/.local/bin:$PATH"
 fi
 
-export PATH="/home/merlin/.local/share/gem/ruby/3.0.0/bin:$PATH"
+export PATH="/home/$USER/.local/share/gem/ruby/3.0.0/bin:$PATH"
 export PATH="~/rofi-translate:$PATH"
 export PATH="~/.cargo/bin/:$PATH"
 export PATH="~/.platformio/penv/bin:$PATH"
@@ -93,9 +86,7 @@ alias upal="paru -Syu --noconfirm"
 # more intuitive shortcuts
 alias rm="rm -i"
 
-# vim
-alias vip="nvim /media/merlin/Projects"
-alias vim="nvim"
+# editor shortcut
 alias hx="helix"
 
 ## Colorize the grep command output for ease of use (good for log files)##
