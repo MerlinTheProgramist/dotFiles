@@ -27,10 +27,13 @@ set $menu "rofi -show drun -show-icons -font 'Noto Sans 13'"
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 set $laptop eDP-1
 # set $external HDMI-A-2
-output * bg $(find /usr/share/wallpapers/ | shuf -n 1) fill scale 1 pos 0 0 
-bindsym XF86Tools exec swaybg -i $(find /usr/share/wallpapers/ | shuf -n 1) -m fill
-# disable screen on lid close
-bindswitch --reload --locked lid:on output $laptop disable
+# output * bg $(find /usr/share/wallpapers/ | shuf -n 1) fill scale 1 pos 0 0 
+output * bg /usr/share/wallpapers/nyarch-linux-wallpapers.jpg fill scale 1 pos 0 0 
+bindsym XF86Tools exec swaybg -i $(find /usr/share/wallpapers/ -type f | shuf -n 1) -m fill
+# other silly wallpapers :3
+bindsym Shift+XF86Tools exec swaybg -i $(find /usr/share/wallpapers/silly/ -type f | shuf -n 1) -m fill
+# lock and disable screen on lid close
+bindswitch --reload --locked lid:on  exec ~/.config/sway/lid-close.sh; output $laptop disable
 bindswitch --reload --locked lid:off output $laptop enable
 
 
@@ -79,6 +82,7 @@ input type:touchpad {
     tap_button_map lrm  # tap with 1 finger = left click, 2 fingers = right click, 3 fingers = middle click
     # dwt enabled         # disable (touchpad) while typing
     dwtp enabled        # disable (touchpad) while track pointing
+    dwt disabled        # don't disable touchpad when pressing keyboard keys
 }
 
 # input type
@@ -124,6 +128,9 @@ input type:touchpad {
 
     # rofi translator
     bindsym $mod+t exec "rofi-trans"
+
+    # rofi buku bookmarks
+    bindsym $mod+b exec "rofi-buku"
     
     # audio controll
     bindsym $mod+p exec --no-startup-id pavucontrol
@@ -135,7 +142,7 @@ input type:touchpad {
     bindsym $mod+shift+f exec --no-startup-id $term -e ranger;focus
     
     # Browser
-    bindsym $mod+b exec --no-startup-id $browser;focus
+    # bindsym $mod+b exec --no-startup-id $browser;focus
     
 
 #
@@ -204,7 +211,7 @@ for_window [app_id="flameshot"] border pixel 0, floating enable, fullscreen disa
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
     # bindsym $mod+b splith
-    # bindsym $mod+v splitv
+    bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
     bindsym $mod+s layout stacking
@@ -282,13 +289,14 @@ bindsym $mod+r mode "resize"
 # system exit
 #
 
-set $mode_system logout-l, suspend-u, reboot-r, shutdown-s
+set $mode_system l-ock, u-suspend (RAM), h-ibernate (SWAP), r-eboot, s-hutdown, e-xit
 mode "$mode_system" {
-    bindsym l exec swaymsg exit
+    bindsym l exec $system_lock; mode "default"
     bindsym u exec systemctl suspend; mode "default"
-    # bindsym h exec systemctl hibernate, mode "default"
+    bindsym h exec systemctl hibernate; mode "default"
     bindsym r exec reboot now; mode "default"
     bindsym s exec shutdown now; mode "default"
+    bindsym e exec swaymsg exit
 
     # Return to default mode
     bindsym Return mode "default"
@@ -309,10 +317,13 @@ bindsym $mod+X mode "$mode_system"
     # Special keys to adjust brightness via brightnessctl
     bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
     bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
-    # Special key to take a screenshot with grim
-    bindsym Print exec grim
+    # Special key to take a screenshot into clipboard
+    bindsym Print exec flameshot screen -p ~/Pictures/ScreenShots/ -c
     # screenshot with flameshot
     bindsym $mod+Shift+s exec flameshot gui
+
+    # color picker 
+    bindsym $mod+g exec hyprpicker -a
 
     # remove title bars
     default_border pixel 2

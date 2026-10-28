@@ -33,14 +33,26 @@ yellow = "0xe2e210"
 background = "0x24292e"
 foreground = "0xd1d5da"
 
-# [font]
-# size = 11.25 # default font size
+[font]
+# size = 9 # default font size was 11.25
+[font.bold]
+family = "monocraft"
+style = "Bold"
+[font.bold_italic]
+family = "monocraft"
+style = "Bold Italic"
+[font.italic]
+family = "monocraft"
+style = "Italic"
+[font.normal]
+family = "monocraft"
+style = "Normal"
 
 [scrolling]
 history = 50000
 
 [window]
-opacity = 0.95
+opacity = 0.80
 
 [keyboard]
 bindings = [{key = "Space", mods="Control", action="ToggleViMode"}]

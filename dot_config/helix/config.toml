@@ -59,4 +59,10 @@ X = ["extend_line_up", "extend_to_line_bounds"]
 # macro for generating pdf from markdown and latex
 m = ":run-shell-command pandoc -t pdf \"<C-r>%\" | zathura -"
 
-
+# mathematical symbols
+[keys.insert.C-m]
+"A" = "@∀"
+"<" = "@⟨"
+">" = "@⟩"
+# "le"= "@≤"
+# "ge"= "@≥"

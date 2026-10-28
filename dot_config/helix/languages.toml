@@ -1,3 +1,5 @@
+# global config, tab-width doesn't have effect globally
+indent = { tab-width = 2, unit = "	" }
 
 
 [[language]]
@@ -14,6 +16,10 @@ command = "/home/merlin/Projects/spice-lsp/target/debug/spice-lsp"
 name = "spice"
 source = { path = "/home/merlin/Projects/spice-lsp/tree-sitter-spice"}
 
+[[language]]
+name = "toml"
+roots = ["."] # fix: to reenable formatting when editing dot files
+
 
 [[language]]
 name = "json"
@@ -22,7 +28,7 @@ auto-format = false
 [language-server.clangd]
 command = "clangd"
 # args = ["--fallback-style=~/.config/helix/clang-format"]
-config = {"clangd.fallbackFlags" = ["-std=c++23"]}
+config = {"clangd.Flags" = ["-std=c++23"]}
 
 
 # another c++ formatter alternative to clangd (but not everything works)
@@ -78,6 +84,7 @@ language-servers = ["asm"]
 scope = "source.asm"
 comment-token = ";"
 
+
 # [[language]]
 # name="asm"
 # scope = "source.asm"
@@ -95,6 +102,7 @@ comment-token = ";"
 
 [[language]]
 name="html"
+auto-format=false
 
 [[language]]
 name = "latex"
@@ -149,8 +157,8 @@ rootPatterns = [
 debounce = 1000
 formatLines = 1
 formatPattern = [
-  "^[^:]+:(\\d+):(\\d+) - (.*) \\((.*)\\)$",
-  { line = 1, column = 2, security = 3, message = [3, " (", 4, ")"] },
+	"^[^:]+:(\\d+):(\\d+) - (.*) \\((.*)\\)$",
+	{ line = 1, column = 2, security = 3, message = [3, " (", 4, ")"] },
 ]
 securities = { "Unknown word" = "warning" }
 

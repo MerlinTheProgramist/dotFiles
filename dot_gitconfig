@@ -20,7 +20,7 @@
 	helper = 
 	helper = !/usr/bin/gh auth git-credential
 [user]
-	email = kvasjir@proton.me
+	email = merlin-1@o2.pl
 	name = Merlin
 [rerere]
 	enabled = true
@@ -57,3 +57,5 @@ lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(r
 [push]
 	autoSetupRemote = true
 	autoSetupRemote = true
+[credential]
+	helper = store

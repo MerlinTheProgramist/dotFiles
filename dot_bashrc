@@ -51,7 +51,7 @@ export PATH="~/.platformio/penv/bin:$PATH"
 
 
 
-diff-bin(){
+bindiff(){
   colordiff <(xxd $1) <(xxd $2)
 }
 
@@ -92,7 +92,6 @@ alias upal="paru -Syu --noconfirm"
 
 # more intuitive shortcuts
 alias rm="rm -i"
-alias tr="trash"
 
 # vim
 alias vip="nvim /media/merlin/Projects"
@@ -286,11 +285,6 @@ alias sr="sudo reboot"
 
 ### FUNCTIONS
 # CHMOD
-add_exe()
-{
-  sudo chmod +x $1
-}
-
 
 mp4-to-mp3(){
   for f in *.mp4; do 
@@ -433,19 +427,6 @@ alias discord="LIBVA_DRIVER_NAME=radeonsi discord --ignore-gpu-blocklist --disab
 
 # reporting tools - install when not installed
 neofetch # | lolcat
-#screenfetch
-#alsi
-#paleofetch
-#fetch
-#hfetch
-#sfetch
-#ufetch
-#ufetch-arco
-#pfetch
-#sysinfo
-#sysinfo-retro
-#cpufetch
-#colorscript random
 
 # shortcut keys: [Esc] [s]
 bind '"\es":"sudo !#"'
@@ -464,8 +445,18 @@ open-live-tex (){
   pandoc -t pdf "$1" | zathura -
 }
 
+compress_pdf (){
+  gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/default \
+    -dNOPAUSE -dQUIET -dBATCH -dDetectDuplicateImages \
+    -dCompressFonts=true -r150 -sOutputFile=$2 $1
+}
+
 
 alias matlab-term="matlab -nodesktop -nosplash"
+
+matlab_run_file(){
+  matlab-term -r "try, run('$1'), catch, exit, end, exit"
+}
 
 alias nmoff="nmtui radio wifi off"
 alias ip-info="ip -br -c link show up"
